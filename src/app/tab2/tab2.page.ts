@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { People } from '../../model/people.model';
+import { RankingAluno } from '../../model/rankingAluno.model';
+import { RankingAlunoService } from '../../providers/ranking-aluno.service';
 
 @Component({
   selector: 'app-tab2',
@@ -9,69 +10,14 @@ import { People } from '../../model/people.model';
 })
 export class Tab2Page implements OnInit {
 
-  allPeople: People[];
-  people = [
-    { 
-      name: 'Augusto Bondança', 
-      image: '../../assets/img/profile.jpg',
-      pontuation: 200
-     },
-     { 
-      name: 'Augusto Bondança', 
-      image: '../../assets/img/profile.jpg',
-      pontuation: 200
-     },
-     { 
-      name: 'Augusto Bondança', 
-      image: '../../assets/img/profile.jpg',
-      pontuation: 200
-     },
-     { 
-      name: 'Augusto Bondança', 
-      image: '../../assets/img/profile.jpg',
-      pontuation: 200
-     },
-     { 
-      name: 'Augusto Bondança', 
-      image: '../../assets/img/profile.jpg',
-      pontuation: 200
-     },
-     { 
-      name: 'Augusto Bondança', 
-      image: '../../assets/img/profile.jpg',
-      pontuation: 200
-     },
-     { 
-      name: 'Augusto Bondança', 
-      image: '../../assets/img/profile.jpg',
-      pontuation: 200
-     },
-     { 
-      name: 'Augusto Bondança', 
-      image: '../../assets/img/profile.jpg',
-      pontuation: 200
-     },
-     { 
-      name: 'Augusto Bondança', 
-      image: '../../assets/img/profile.jpg',
-      pontuation: 200
-     },
-     { 
-      name: 'Augusto Bondança', 
-      image: '../../assets/img/profile.jpg',
-      pontuation: 200
-     },
-  ]
+  allAlunoRanking: RankingAluno[];
 
-  constructor() {}
+  constructor(private rankingAlunoService: RankingAlunoService) { }
 
   ngOnInit() {
-    this.allPeople = new Array<People>();
-    this.allPeople = this.people;
-  
-
-    // this.peopleService.getDataHouse().subscribe(data => {
-    //   this.allPeople = data as Array<People>;
-    // });
+    this.rankingAlunoService.getrankingAluno().subscribe(data => {
+      this.allAlunoRanking = data as Array<RankingAluno>;
+      console.log('Lista de ranking dos Alunos', this.allAlunoRanking)
+    });
   }
 }
