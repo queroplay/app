@@ -82,10 +82,9 @@ export class Tab1Page implements OnInit {
   }
 
   scheduleNotification() {
-    console.log("CHAMAAAA")
     this.localNotifications.schedule({
-      title: 'My first notification',
-      text: 'Thats pretty easy...',
+      title: 'E ai, tá afim de ganhar pontos hoje?',
+      text: 'Preparamos uma pergunta moleza pra você hoje. Deseja Responder?',
       foreground: true
     });
   }
@@ -97,6 +96,15 @@ export class Tab1Page implements OnInit {
       }
     };
     this.router.navigate(['/ranking'], navigationExtras);
+  }
+
+  openPerguntaWithQueryParams() {
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        id: this.id
+      }
+    };
+    this.router.navigate(['/pergunta'], navigationExtras);
   }
 
   getAll() {
@@ -111,7 +119,22 @@ export class Tab1Page implements OnInit {
       header: header,
       subHeader: sub,
       message: msg,
-      buttons: ['Quero responder']
+      buttons: [
+        {
+          text: 'SIIIM',
+          handler: () => {
+            console.log('Yes selected');
+            this.openPerguntaWithQueryParams();
+          }
+        },
+        {
+          text: 'Não..',
+          handler: () => {
+            console.log('No selected!');
+            alert("Tudo bem... mas não esqueça de acompanhar o ranking!");
+          }
+        }
+      ]
     }).then(alert => alert.present());
   }
 

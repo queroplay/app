@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +8,20 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+
+  openDetailsWithQueryParams() {
+    alert("Parabéns você acertou!");
+
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        id: JSON.stringify("")
+      }
+    };
+    this.router.navigate([''], navigationExtras);
+  }
 
 }

@@ -27,7 +27,6 @@ export class Tab2Page implements OnInit {
   }
 
   ngOnInit() {
-    alert(this.data);
     this.rankingAlunoService.getrankingAluno(this.data).subscribe(data => {
       this.allAlunoRanking = data as Array<RankingAluno>;
       console.log('Lista de ranking dos Alunos', this.allAlunoRanking)
