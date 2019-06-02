@@ -47,6 +47,16 @@ export class Tab1Page implements OnInit {
   public getInfoAluno() {
     this.alunoService.getAluno(this.id).subscribe(data => {
       this.alunos = data as Array<Aluno>;
+
+      for(let aluno of this.alunos) {
+        if(aluno.curso == "enfUNASP") {
+          aluno.curso = "ENFERMAGEM";
+        } else if(aluno.curso == "adsUNASP") {
+          aluno.curso = "ADS";
+        } else if(aluno.curso == "pedUNASP") {
+          aluno.curso = "PEDAGOGIA";
+        }
+      }
       console.log('Lista de alunos', this.alunos)
     });
   }
