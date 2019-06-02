@@ -1,4 +1,29 @@
-.welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+ion-toolbar {
+  --background: #027E91;
+}
+
+.button-find {
+  --background: #027E91
+}
+
+ion-avatar.ios.hydrated {
+  border: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 170px;
+}
+hr {
+  border: 0.1px solid rgba(236, 236, 236, 1) !important;
+  height: 1px !important;
+  width: 100% !important;
+  display: block !important;
+  font-size: 1em !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+div {
+  background-color: #FAFAFA;
+  border-radius: 5px;
 }
