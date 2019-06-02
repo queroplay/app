@@ -4,13 +4,13 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class AlunoService {
+export class RankingAlunoService {
 
-    url = 'http://queroplay.mybluemix.net/aluno/95630422d42d5b2d8621d9bc2c2ab194';
+  url = 'http://queroplay.mybluemix.net/ranking/semestre/aluno/95630422d42d5b2d8621d9bc2c2ab194'
 
   constructor( private http: HttpClient ) { }
 
-  getAluno() {
+  getrankingAluno() {
     return this.http.get(this.url);
   }
 }
