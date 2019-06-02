@@ -13,11 +13,11 @@
 
 
 <ion-content padding>
-  <div>
+  <div *ngFor="let infos of alunos">
     <ion-avatar>
       <img src="../../assets/img/profile.jpg">
       <label style="text-align: center">
-        <h4>Augusto Bondança</h4>
+        <h4>{{infos.nome}}</h4>
       </label>
     </ion-avatar>
 
@@ -26,8 +26,10 @@
     <br>
     <br>
     <hr>
-    
+
     <div>
+      <h1 style="text-align: center">Informações</h1>
+
       <ion-row>
         <ion-col size="0.8"></ion-col>
 
@@ -38,10 +40,54 @@
         <ion-col></ion-col>
 
         <ion-col>
-          <h4>1.980</h4>
+          <h4>{{infos.pontuacao}}</h4>
         </ion-col>
         <ion-col></ion-col>
       </ion-row>
+
+      <ion-row>
+        <ion-col size="0.8"></ion-col>
+
+        <ion-col size="6">
+          <h4>Faculdade</h4>
+        </ion-col>
+
+        <ion-col></ion-col>
+
+        <ion-col>
+          <h4>{{infos.instituicao}}</h4>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col size="0.8"></ion-col>
+  
+          <ion-col size="6">
+            <h4>RA</h4>
+          </ion-col>
+  
+          <ion-col></ion-col>
+  
+          <ion-col>
+            <h4>{{infos.ra}}</h4>
+          </ion-col>
+          <ion-col></ion-col>
+        </ion-row>
+      <ion-row>
+        <ion-col size="0.8"></ion-col>
+
+        <ion-col size="6">
+          <h4>Semestre</h4>
+        </ion-col>
+
+        <ion-col></ion-col>
+
+        <ion-col>
+          <h4>{{infos.semestre}}</h4>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+      
     </div>
 
     <hr>
@@ -49,36 +95,40 @@
     <div>
       <h1 style="text-align: center">indique amigos</h1>
       <ion-row>
-          <ion-col size="0.8"></ion-col>
-          <ion-col size="6">
-            <h4>Convites</h4>
-          </ion-col>
-  
-          <ion-col></ion-col>
-  
-          <ion-col>
-              <h4><ion-badge color="success">3</ion-badge></h4>
-          </ion-col>
-          <ion-col></ion-col>
-        </ion-row>
+        <ion-col size="0.8"></ion-col>
+        <ion-col size="6">
+          <h4>Convites</h4>
+        </ion-col>
+
+        <ion-col></ion-col>
+
+        <ion-col>
+          <h4>
+            <ion-badge color="success">3</ion-badge>
+          </h4>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
     </div>
 
     <hr>
     <div>
       <h1 style="text-align: center">Status</h1>
       <ion-row>
-          <ion-col size="0.8"></ion-col>
-          <ion-col size="6">
-            <h4>Pendências</h4>
-          </ion-col>
-  
-          <ion-col></ion-col>
-  
-          <ion-col>
-              <h4><ion-badge color="danger">2</ion-badge></h4>
-          </ion-col>
-          <ion-col></ion-col>
-        </ion-row>
+        <ion-col size="0.8"></ion-col>
+        <ion-col size="6">
+          <h4>Pendências</h4>
+        </ion-col>
+
+        <ion-col></ion-col>
+
+        <ion-col>
+          <h4>
+            <ion-badge color="danger">2</ion-badge>
+          </h4>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
     </div>
 
     <hr>

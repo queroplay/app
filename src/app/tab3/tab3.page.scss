@@ -4,3 +4,18 @@ ion-toolbar {
   ion-title {
     color: white;
   }
+
+  .question {
+    display: block;
+    padding: 15px;
+  }
+  
+  hr {
+    border: 0.1px solid rgba(236, 236, 236, 1) !important;
+    height: 1px !important;
+    width: 100% !important;
+    display: block !important;
+    font-size: 1em !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
