@@ -43,39 +43,3 @@
     </ion-card-content>
   </ion-card>
 </ion-content>
-
-
-<ion-card align-items: flex-start *ngFor="let house of allHouses">
-
-  <ion-card-content>
-    <ion-icon style="float:right" name="star-half"></ion-icon>
-    <ion-icon style="float:right" name="star"></ion-icon>
-    <ion-icon style="float:right" name="star"></ion-icon>
-    <ion-icon style="float:right" name="star"></ion-icon>
-    <ion-icon style="float:right" name="star"></ion-icon>
-
-    <ion-card-title>
-      Titulo
-    </ion-card-title>
-    <br />
-    <div>
-      <span>
-        <h1>Apartamento para Aluguel R$/mês</h1>
-      </span>
-    </div>
-    <p>
-      Quartos,
-      Banheiros,
-      Vagas e
-      metros quadrado
-    </p>
-
-    <ion-row>
-      <ion-col>
-        <ion-button style="float:right" (click)="selectHouse(house)">Ver mais</ion-button>
-        <!-- [routerLink]="'/house-info'" -->
-      </ion-col>
-    </ion-row>
-
-  </ion-card-content>
-</ion-card>
