@@ -17,15 +17,18 @@
 
       Considere os requisitos, a seguir, de um sistema para uma universidade, na qual se pretenda gerenciar o setor
       acadêmico.
+      <br>
+      <br>
       · R1: o sistema deve permitir que cada professor realize o lançamento de notas das turmas nas quais lecionou;
+      <br>
       · R2: o sistema deverá ser desenvolvido de forma a possibilitar seu transporte para outro sistema operacional em,
-      no máximo, sessenta dias;
+      no máximo, sessenta dias;<br>
       · R3: o sistema deve permitir que um estudante realize a sua matrícula nas disciplinas oferecidas em um semestre
-      letivo;
+      letivo;<br>
       · R4: o sistema atualiza a nota do estudante, permitindo sua visualização, em até dois segundos depois do momento
-      que o professor a registra;
+      que o professor a registra;<br>
       · R5: o sistema deve permitir que o auxiliar de serviços acadêmicos realize o cadastro de um estudante em não mais
-      do que dez minutos de orientação.
+      do que dez minutos de orientação. <br>
       Nessa situação, representam descrições de requisitos não funcionais apenas os requisitos:
     </p>
   </div>
@@ -35,19 +38,30 @@
   <ion-list>
     <ion-radio-group>
       <ion-item>
-        <ion-label>Biff</ion-label>
-        <ion-radio slot="start" value="biff" checked></ion-radio>
+        <ion-label> R1, R2 e R3.</ion-label>
+        <ion-radio slot="start" value="a" checked></ion-radio>
       </ion-item>
 
       <ion-item>
-        <ion-label>Griff</ion-label>
-        <ion-radio slot="start" value="griff"></ion-radio>
+        <ion-label>R1, R2 e R5.</ion-label>
+        <ion-radio slot="start" value="b"></ion-radio>
       </ion-item>
 
       <ion-item>
-        <ion-label>Buford</ion-label>
-        <ion-radio slot="start" value="buford"></ion-radio>
+        <ion-label>R1, R3 e R4.</ion-label>
+        <ion-radio slot="start" value="c"></ion-radio>
       </ion-item>
-    </ion-radio-group>
+
+      <ion-item>
+          <ion-label>R2, R4 e R5.</ion-label>
+          <ion-radio slot="start" value="d"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>R3, R4 e R5.</ion-label>
+            <ion-radio slot="start" value="e"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+        <ion-button expand="block">Enviar</ion-button>
   </ion-list>
 </ion-content>
