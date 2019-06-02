@@ -22,19 +22,19 @@ export class Tab1Page implements OnInit {
     private alertCtrl: AlertController,
     private alunoService: AlunoService
   ) {
-    // this.plt.ready().then(() => {
-    //   this.localNotifications.on('click').subscribe(res => {
-    //     console.log('click', res);
-    //     let msg = res.data ? res.data.mydata : '';
-    //     this.showAlert(res.title, res.text, msg);
-    //   });
+    this.plt.ready().then(() => {
+      this.localNotifications.on('click').subscribe(res => {
+        console.log('click', res);
+        let msg = res.data ? res.data.mydata : '';
+        this.showAlert(res.title, res.text, msg);
+      });
 
-    //   this.localNotifications.on('trigger').subscribe(res => {
-    //     console.log('trigger', res);
-    //     let msg = res.data ? res.data.mydata : '';
-    //     this.showAlert(res.title, res.text, msg);
-    //   });
-    // });
+      this.localNotifications.on('trigger').subscribe(res => {
+        console.log('trigger', res);
+        let msg = res.data ? res.data.mydata : '';
+        this.showAlert(res.title, res.text, msg);
+      });
+    });
 
   }
 
@@ -42,18 +42,21 @@ export class Tab1Page implements OnInit {
     this.id = "95630422d42d5b2d8621d9bc2c2ab194";
     this.src_image = "../../assets/img/profile.jpg";
     this.getInfoAluno();
+    setTimeout(() => {
+      this.scheduleNotification()
+    }, 8000);
   }
 
   public getInfoAluno() {
     this.alunoService.getAluno(this.id).subscribe(data => {
       this.alunos = data as Array<Aluno>;
 
-      for(let aluno of this.alunos) {
-        if(aluno.curso == "enfUNASP") {
+      for (let aluno of this.alunos) {
+        if (aluno.curso == "enfUNASP") {
           aluno.curso = "ENFERMAGEM";
-        } else if(aluno.curso == "adsUNASP") {
+        } else if (aluno.curso == "adsUNASP") {
           aluno.curso = "ADS";
-        } else if(aluno.curso == "pedUNASP") {
+        } else if (aluno.curso == "pedUNASP") {
           aluno.curso = "PEDAGOGIA";
         }
       }
@@ -62,13 +65,13 @@ export class Tab1Page implements OnInit {
   }
 
   public modifyUser() {
-    if(this.id == "95630422d42d5b2d8621d9bc2c2ab194") {
+    if (this.id == "95630422d42d5b2d8621d9bc2c2ab194") {
       this.id = "20c90cf36b587f7338ed256a8d822e1234";
       this.src_image = "../../assets/img/profile_catossi.jpg";
-    } else if(this.id == "20c90cf36b587f7338ed256a8d822e1234") {
+    } else if (this.id == "20c90cf36b587f7338ed256a8d822e1234") {
       this.id = "20c90cf36b587f7338ed256a8d822eb1234";
       this.src_image = "../../assets/img/profile_gustavo.jpg";
-    } else if(this.id = "20c90cf36b587f7338ed256a8d822eb1234") {
+    } else if (this.id = "20c90cf36b587f7338ed256a8d822eb1234") {
       this.id = "95630422d42d5b2d8621d9bc2c2ab194";
       this.src_image = "../../assets/img/profile.jpg";
     }
@@ -76,26 +79,27 @@ export class Tab1Page implements OnInit {
     this.getInfoAluno();
   }
 
-  // scheduleNotification() {
-  //   this.localNotifications.schedule({
-  //     title: 'My first notification',
-  //     text: 'Thats pretty easy...',
-  //     foreground: true
-  //   });
-  // }
-  // getAll() {
-  //   this.localNotifications.getAll().then(res => {
-  //     this.scheduled = res;
-  //   });
-  // }
+  scheduleNotification() {
+    console.log("CHAMAAAA")
+    this.localNotifications.schedule({
+      title: 'My first notification',
+      text: 'Thats pretty easy...',
+      foreground: true
+    });
+  }
+  getAll() {
+    this.localNotifications.getAll().then(res => {
+      this.scheduled = res;
+    });
+  }
 
-  // showAlert(header, sub, msg) {
-  //   this.alertCtrl.create({
-  //     header: header,
-  //     subHeader: sub,
-  //     message: msg,
-  //     buttons: ['Quero responder']
-  //   }).then(alert => alert.present());
-  //}
+  showAlert(header, sub, msg) {
+    this.alertCtrl.create({
+      header: header,
+      subHeader: sub,
+      message: msg,
+      buttons: ['Quero responder']
+    }).then(alert => alert.present());
+  }
 
 }
