@@ -4,7 +4,7 @@
       Meu Perfil
     </ion-title>
     <ion-buttons slot="secondary">
-      <ion-button>
+      <ion-button (click)="modifyUser()">
         <ion-icon slot="icon-only" name="contact"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -15,7 +15,7 @@
 <ion-content padding>
   <div *ngFor="let infos of alunos">
     <ion-avatar>
-      <img src="../../assets/img/profile.jpg">
+      <img src="{{src_image}}">
       <label style="text-align: center">
         <h4>{{infos.nome}}</h4>
       </label>
@@ -60,19 +60,19 @@
         <ion-col></ion-col>
       </ion-row>
       <ion-row>
-          <ion-col size="0.8"></ion-col>
-  
-          <ion-col size="6">
-            <h4>RA</h4>
-          </ion-col>
-  
-          <ion-col></ion-col>
-  
-          <ion-col>
-            <h4>{{infos.ra}}</h4>
-          </ion-col>
-          <ion-col></ion-col>
-        </ion-row>
+        <ion-col size="0.8"></ion-col>
+
+        <ion-col size="6">
+          <h4>RA</h4>
+        </ion-col>
+
+        <ion-col></ion-col>
+
+        <ion-col>
+          <h4>{{infos.ra}}</h4>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
       <ion-row>
         <ion-col size="0.8"></ion-col>
 
@@ -83,11 +83,27 @@
         <ion-col></ion-col>
 
         <ion-col>
-          <h4>{{infos.semestre}}</h4>
+          <h4>{{infos.semestre}} º</h4>
         </ion-col>
+
         <ion-col></ion-col>
       </ion-row>
-      
+      <ion-row>
+        <ion-col size="0.8"></ion-col>
+
+        <ion-col size="6">
+          <h4>Curso</h4>
+        </ion-col>
+
+        <ion-col></ion-col>
+
+        <ion-col>
+          <h4>{{infos.curso}}</h4>
+        </ion-col>
+
+        <ion-col></ion-col>
+      </ion-row>
+
     </div>
 
     <hr>

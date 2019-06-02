@@ -6,11 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AlunoService {
 
-    url = 'http://queroplay.mybluemix.net/aluno/95630422d42d5b2d8621d9bc2c2ab194';
+    url = 'http://queroplay.mybluemix.net/aluno/';
 
   constructor( private http: HttpClient ) { }
 
-  getAluno() {
-    return this.http.get(this.url);
+  getAluno(id) {
+    return this.http.get(this.url + id);
   }
 }

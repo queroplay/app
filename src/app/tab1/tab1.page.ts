@@ -14,7 +14,8 @@ export class Tab1Page implements OnInit {
 
   scheduled = [];
   alunos: Aluno[];
-
+  id: String;
+  src_image: String;
   constructor(
     private plt: Platform,
     private localNotifications: LocalNotifications,
@@ -38,12 +39,32 @@ export class Tab1Page implements OnInit {
   }
 
   ngOnInit() {
-        this.alunoService.getAluno().subscribe(data => {
+    this.id = "95630422d42d5b2d8621d9bc2c2ab194";
+    this.src_image = "../../assets/img/profile.jpg";
+    this.getInfoAluno();
+  }
+
+  public getInfoAluno() {
+    this.alunoService.getAluno(this.id).subscribe(data => {
       this.alunos = data as Array<Aluno>;
       console.log('Lista de alunos', this.alunos)
     });
-  
+  }
+
+  public modifyUser() {
+    if(this.id == "95630422d42d5b2d8621d9bc2c2ab194") {
+      this.id = "20c90cf36b587f7338ed256a8d822e1234";
+      this.src_image = "../../assets/img/profile_catossi.jpg";
+    } else if(this.id == "20c90cf36b587f7338ed256a8d822e1234") {
+      this.id = "20c90cf36b587f7338ed256a8d822eb1234";
+      this.src_image = "../../assets/img/profile_gustavo.jpg";
+    } else if(this.id = "20c90cf36b587f7338ed256a8d822eb1234") {
+      this.id = "95630422d42d5b2d8621d9bc2c2ab194";
+      this.src_image = "../../assets/img/profile.jpg";
     }
+
+    this.getInfoAluno();
+  }
 
   // scheduleNotification() {
   //   this.localNotifications.schedule({
