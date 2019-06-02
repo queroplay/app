@@ -1,1 +1,28 @@
+.img-slide {
+    height: 260px;
+    width: 100%
+}
+h1 {
+    color: #000;
+    font-size: 28px;
+    font-weight: 700px;
+    line-height: 1.2;
+}
 
+p {
+    color: #666;
+}
+
+hr {
+    border: 0.1px solid rgba(236, 236, 236, 1) !important;
+    height: 1px !important;
+    width: 100% !important;
+    display: block !important;
+    font-size: 1em !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .thumb-border {
+    --border-radius: 10px;
+  }

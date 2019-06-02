@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Platform, AlertController } from '@ionic/angular';
+import { LocalNotifications, ELocalNotificationTriggerUnit } from '@ionic-native/local-notifications/ngx';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,49 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  scheduled = [];
+
+  constructor(
+    private plt: Platform,
+    private localNotifications: LocalNotifications,
+    private alertCtrl: AlertController
+  ) {
+    this.plt.ready().then(() => {
+      this.localNotifications.on('click').subscribe(res => {
+        console.log('click', res);
+        let msg = res.data ? res.data.mydata : '';
+        this.showAlert(res.title, res.text, msg);
+      });
+
+      this.localNotifications.on('trigger').subscribe(res => {
+        console.log('trigger', res);
+        let msg = res.data ? res.data.mydata : '';
+        this.showAlert(res.title, res.text, msg);
+      });
+    });
+
+  }
+
+  scheduleNotification() {
+    this.localNotifications.schedule({
+      title: 'My first notification',
+      text: 'Thats pretty easy...',
+      foreground: true
+    });
+  }
+  getAll() {
+    this.localNotifications.getAll().then(res => {
+      this.scheduled = res;
+    });
+  }
+
+  showAlert(header, sub, msg) {
+    this.alertCtrl.create({
+      header: header,
+      subHeader: sub,
+      message: msg,
+      buttons: ['Quero responder']
+    }).then(alert => alert.present());
+  }
 
 }

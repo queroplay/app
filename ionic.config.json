@@ -1,5 +1,7 @@
 {
   "name": "queroPlay",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
