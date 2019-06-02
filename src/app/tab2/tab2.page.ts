@@ -13,52 +13,52 @@ export class Tab2Page implements OnInit {
   people = [
     { 
       name: 'Augusto Bondança', 
-      image: 'https://www.impacta.edu.br/blog/wp-content/uploads/2018/08/augusto-b.jpg',
+      image: '../../assets/img/profile.jpg',
       pontuation: 200
      },
      { 
       name: 'Augusto Bondança', 
-      image: 'https://www.impacta.edu.br/blog/wp-content/uploads/2018/08/augusto-b.jpg',
+      image: '../../assets/img/profile.jpg',
       pontuation: 200
      },
      { 
       name: 'Augusto Bondança', 
-      image: 'https://www.impacta.edu.br/blog/wp-content/uploads/2018/08/augusto-b.jpg',
+      image: '../../assets/img/profile.jpg',
       pontuation: 200
      },
      { 
       name: 'Augusto Bondança', 
-      image: 'https://www.impacta.edu.br/blog/wp-content/uploads/2018/08/augusto-b.jpg',
+      image: '../../assets/img/profile.jpg',
       pontuation: 200
      },
      { 
       name: 'Augusto Bondança', 
-      image: 'https://www.impacta.edu.br/blog/wp-content/uploads/2018/08/augusto-b.jpg',
+      image: '../../assets/img/profile.jpg',
       pontuation: 200
      },
      { 
       name: 'Augusto Bondança', 
-      image: 'https://www.impacta.edu.br/blog/wp-content/uploads/2018/08/augusto-b.jpg',
+      image: '../../assets/img/profile.jpg',
       pontuation: 200
      },
      { 
       name: 'Augusto Bondança', 
-      image: 'https://www.impacta.edu.br/blog/wp-content/uploads/2018/08/augusto-b.jpg',
+      image: '../../assets/img/profile.jpg',
       pontuation: 200
      },
      { 
       name: 'Augusto Bondança', 
-      image: 'https://www.impacta.edu.br/blog/wp-content/uploads/2018/08/augusto-b.jpg',
+      image: '../../assets/img/profile.jpg',
       pontuation: 200
      },
      { 
       name: 'Augusto Bondança', 
-      image: 'https://www.impacta.edu.br/blog/wp-content/uploads/2018/08/augusto-b.jpg',
+      image: '../../assets/img/profile.jpg',
       pontuation: 200
      },
      { 
       name: 'Augusto Bondança', 
-      image: 'https://www.impacta.edu.br/blog/wp-content/uploads/2018/08/augusto-b.jpg',
+      image: '../../assets/img/profile.jpg',
       pontuation: 200
      },
   ]

@@ -2,11 +2,15 @@ ion-toolbar {
   --background: #027E91;
 }
 
+ion-title {
+  color: white;
+}
+
 .button-find {
   --background: #027E91
 }
 
-ion-avatar.ios.hydrated {
+ion-avatar {
   border: 0;
   display: block;
   margin-left: auto;
