@@ -4,6 +4,7 @@ import { LocalNotifications, ELocalNotificationTriggerUnit } from '@ionic-native
 
 import { Aluno } from '../../model/aluno.model';
 import { AlunoService } from 'src/providers/aluno.service';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -20,7 +21,8 @@ export class Tab1Page implements OnInit {
     private plt: Platform,
     private localNotifications: LocalNotifications,
     private alertCtrl: AlertController,
-    private alunoService: AlunoService
+    private alunoService: AlunoService,
+    private router: Router
   ) {
     this.plt.ready().then(() => {
       this.localNotifications.on('click').subscribe(res => {
@@ -87,6 +89,16 @@ export class Tab1Page implements OnInit {
       foreground: true
     });
   }
+
+  openDetailsWithQueryParams() {
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        id: this.id
+      }
+    };
+    this.router.navigate(['/ranking'], navigationExtras);
+  }
+
   getAll() {
     this.localNotifications.getAll().then(res => {
       this.scheduled = res;

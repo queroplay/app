@@ -7,10 +7,19 @@
 </ion-header>
 
 <ion-content>
+  <ion-row>
+    <ion-col size="6">
+      <ion-button expand="block" class="button-find" (click)="openDetailsWithQueryParams()">Menu Principal</ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block" class="button-find" >Atualizar Ranking</ion-button>
+    </ion-col>
+  </ion-row>
+
   <ion-card align-items: flex-start *ngFor="let alunosRanking of allAlunoRanking; let i = index">
     <ion-card-content>
       <ion-card-title>
-        {{i}} Lugar <br>
+        {{i + 1}} º Lugar <br>
       </ion-card-title>
       <h2>{{alunosRanking.nome}}</h2>
       <br />
