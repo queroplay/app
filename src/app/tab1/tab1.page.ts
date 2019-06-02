@@ -90,6 +90,7 @@ export class Tab1Page implements OnInit {
   getAll() {
     this.localNotifications.getAll().then(res => {
       this.scheduled = res;
+      console.log(this.scheduled)
     });
   }
 
